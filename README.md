@@ -7,7 +7,7 @@ The AI-VAR project is a deep learning model for classifying clean tackles and fo
 ## Table of Contents
 
 - [Getting Started](#getting-started)
-- [Usage](#usage)
+- [Implementation](#implementation)
 - [Project Structure](#project-structure)
 - [Dependencies](#dependencies)
 - [Contributing](#contributing)
@@ -21,7 +21,7 @@ To get started with the Var-CNN project, follow these steps:
 2. Install dependencies: `pip install -r requirements.txt`
 3. Run the project.
 
-## Usage
+## Implementation
 
 Provide information on how to use your project, including:
 - Data Collection: 
@@ -41,9 +41,58 @@ Provide information on how to use your project, including:
 
 - Result and Analysis: 
     ![Train Result](https://github.com/duongdang1/AI_VAR/blob/ec3f15f24572c923c89fb8594508d90bba24d9a8/85%25.png)
-- Any command-line arguments or configurations
 
-## Project Structure
+- Analysis
+    1. Improvement over training
+        + The model has shown significant improvement throughout the training process. The initial accuracy was around 49.84%, and it increased to 85.67% by the last epoch.
+        + The corresponding loss has also reduced from 0.6961 to 0.3313, indicating that the model is learning and making better predictions.
+    
+    2. Test Accuracy:
+        The test accuracy also increased from 49.38% in the initial epoch to 71.37% in the last epoch. This suggests that the model is generalizing well to unseen data.
+    
+    3. Early Stopping:
+        The early stopping mechanism was triggered after 10 consecutive epochs without improvement in the test loss. This indicates that the model might have reached a point where further training does not lead to better generalization.
 
-Describe the structure of your project. Highlight important directories and files.
+    4. Compare to previous models (https://github.com/aamir09/VarCnn/tree/main)
+        Previous Project:
+        - Training Accuracy: 76.6%
+        - Validation Accuracy: 78%
+        Current Project (Last Epoch):
+        - Training Accuracy: 85.67%
+        - Test Accuracy: 71.37%    
+
+        Several factors could be contributed to why the train accuracy improved but the test/validation accuracy decreased: 
+        1. Overfitting: the model might be overfitting to the training data
+        2. Data Mismatch: 
+        3. Hyperparameter Tuning
+
+## Model Structure and Explaination
+
+1. Input Layer: The model takes an input image with three channels (RGB).
+
+2. Convolutional Layer 1 (`self.conv1`): 
+    - Applies the first convolution with 64 filters, a kernel size of 5, and padding of 2.
+    - Followed by ReLU activation to introduce non-linearity.
+    - MaxPooling layer with a kernel size of 2 and a stride of 2 reduces spatial dimensions.
+
+3. Convolutional Blocks (`self.conv_blocks`):
+    - Consists of four sets of Conv2d-ReLU-MaxPool layers.
+    - Each set has a Conv2d layer with 64 filters, followed by ReLU activation, and a MaxPool layer.
+    - These blocks extract hierarchical features from the input image.
+
+4. Dilation Blocks (`self.dilation_blocks`):
+    - Consists of three sets of Conv2d-ReLU-MaxPool layers with dilated convolutions.
+    - Dilation is applied to capture larger spatial context without increasing the number of parameters.
+
+5. Dense Layers (`self.dense_layers`):
+    - AdaptiveAvgPool2d layer reduces the spatial dimensions to 1x1.
+    - Flatten layer reshapes the tensor for fully connected layers.
+    - Three fully connected layers with 400, 512, and 400 neurons, respectively.
+    - ReLU activations introduce non-linearity.
+    - Dropout layers with a dropout rate of 0.5 to prevent overfitting.
+
+6. Output Layer (`self.sigmoid`):
+    - Applies a sigmoid activation function to obtain binary classification probabilities.
+    - The model aims to predict whether the input image belongs to a certain class (binary classification).
+
 
