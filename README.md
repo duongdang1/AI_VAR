@@ -37,7 +37,7 @@ Provide information on how to use your project, including:
 
 
 - Model Structure: 
-    ![Model Structure]](https://github.com/duongdang1/AI_VAR/blob/main/VarCNN.drawio.png)
+    ![Model Structure]](https://github.com/duongdang1/AI_VAR/blob/72ef6641859f296a76112787b87b1c39d3c717be/VarCNN.drawio.png)
 
 - Any command-line arguments or configurations
 
