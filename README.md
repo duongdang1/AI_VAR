@@ -8,8 +8,8 @@ The AI-VAR project is a deep learning model for classifying clean tackles and fo
 
 - [Getting Started](#getting-started)
 - [Implementation](#implementation)
-- [Model Structure and Explaination](#project-structure)
-- [Future Work](#future)
+- [Model Structure and Explaination](#model-structure)
+- [Future Work](#future-work)
 
 ## Getting Started
 
@@ -64,7 +64,7 @@ Provide information on how to use your project, including:
         2. Data Mismatch: 
         3. Hyperparameter Tuning
 
-## Model Structure and Explaination
+## Model Structure
 
 1. Input Layer: The model takes an input image with three channels (RGB).
 
