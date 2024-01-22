@@ -8,10 +8,8 @@ The AI-VAR project is a deep learning model for classifying clean tackles and fo
 
 - [Getting Started](#getting-started)
 - [Implementation](#implementation)
-- [Project Structure](#project-structure)
-- [Dependencies](#dependencies)
-- [Contributing](#contributing)
-- [License](#license)
+- [Model Structure and Explaination](#project-structure)
+- [Future Work](#future)
 
 ## Getting Started
 
@@ -96,3 +94,10 @@ Provide information on how to use your project, including:
     - The model aims to predict whether the input image belongs to a certain class (binary classification).
 
 
+## Future Work
+1. Data augmentation: 
+    - Experiment more techniques to enhance model generalization
+2. Hyperparameter Tuning: 
+    - Explore different learning rates, weight, dropout rates 
+3. Explainability and Interpretability: 
+    - Explore methods such as Grad-CAM to visualize which part of the image contribute most to the model's precision
