@@ -39,6 +39,8 @@ Provide information on how to use your project, including:
 - Model Structure: 
     ![Model Structure](https://github.com/duongdang1/AI_VAR/blob/72ef6641859f296a76112787b87b1c39d3c717be/VarCNN.drawio.png)
 
+- Result and Analysis: 
+    ![Train Result](https://github.com/duongdang1/AI_VAR/blob/ec3f15f24572c923c89fb8594508d90bba24d9a8/85%25.png)
 - Any command-line arguments or configurations
 
 ## Project Structure
